@@ -7,6 +7,8 @@ RUN microdnf install \
     sudo dnf && \
     microdnf clean all
 
+RUN systemctl enable sshd
+
 # Keys are in key folder, but ipa client generates some in /etc/ssh if they are not there...
 RUN ln -s /etc/ssh/keys/ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key && \
     ln -s /etc/ssh/keys/ssh_host_ecdsa_key.pub /etc/ssh/ssh_host_ecdsa_key.pub && \
