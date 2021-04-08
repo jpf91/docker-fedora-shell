@@ -14,7 +14,7 @@ RUN dnf install -y  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-r
 # Base groups
 RUN dnf group install -y 'Fedora Server Edition' 'C Development Tools and Libraries' 'D Development Tools and Libraries' 'D Development Tools and Libraries' 'Development Tools' 'System Tools'
 
-RUN dnf install -y unrar
+RUN dnf install -y unrar htop
 
 # Keys are in key folder, but ipa client generates some in /etc/ssh if they are not there...
 RUN ln -s /etc/ssh/keys/ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key && \
