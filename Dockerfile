@@ -9,6 +9,9 @@ RUN microdnf install \
 
 RUN systemctl disable rdisc.service sshd.socket
 
+# Base packages
+RUN dnf group install 'Fedora Server Edition' 'C Development Tools and Libraries' 'D Development Tools and Libraries' 'D Development Tools and Libraries' 'Development Tools' 'System Tools'
+
 # Keys are in key folder, but ipa client generates some in /etc/ssh if they are not there...
 RUN ln -s /etc/ssh/keys/ssh_host_ecdsa_key /etc/ssh/ssh_host_ecdsa_key && \
     ln -s /etc/ssh/keys/ssh_host_ecdsa_key.pub /etc/ssh/ssh_host_ecdsa_key.pub && \
